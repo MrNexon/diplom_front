@@ -1,9 +1,42 @@
 version: '3'
 
 services:
+
+  global_db:
+    image: mysql
+    container_name: global_db
+
+    environment:
+      MYSQL_ROOT_PASSWORD: santab
+
+    ports:
+      - "6033:3306"
+
+    restart: always
+    volumes:
+      - db:/var/lib/mysql
+
+
+  global_phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: global_phpmyadmin
+    links:
+      - global_db
+
+    environment:
+      PMA_HOST: global_db
+
+    restart: always
+    ports:
+      - 8080:80
+
   web:
     image: nginx
     volumes:
       - ./site:/usr/share/nginx/html
     ports:
       - "0.0.0.0:9090:80"
+
+volumes:
+  db:
+    driver: local

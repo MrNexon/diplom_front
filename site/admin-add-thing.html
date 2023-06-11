@@ -53,8 +53,10 @@
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        window.apiAddress = 'http://localhost:3000/admin';
-        window.wsAddress = 'ws://localhost:3001';
+         window.ipAddress = 'localhost';
+        //Объявление адресов (куда отправляться за данными);;
+        window.apiAddress = `http://${window.apiAddress}:3000/admin`;
+        window.wsAddress = `ws://${window.apiAddress}:3001`;
 
         window.detailsIndex = 0;
 
