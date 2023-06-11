@@ -39,10 +39,10 @@
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-         window.ipAddress = window.location.href.match(/https?:\/\/([a-z\d.]*)/i)[1];
+        window.ipAddress = window.location.href.match(/https?:\/\/([a-z\d.]*)/i)[1];
         //Объявление адресов (куда отправляться за данными);;
-        window.apiAddress = `http://${window.apiAddress}:3000/admin`;
-        window.wsAddress = `ws://${window.apiAddress}:3001`;
+        window.apiAddress = `http://${window.ipAddress}:3000/admin`;
+        window.wsAddress = `ws://${window.ipAddress}:3001`;
 
         window.formIndex = 0;
 
