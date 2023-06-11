@@ -6,4 +6,4 @@ services:
     volumes:
       - ./site:/usr/share/nginx/html
     ports:
-      - "9090:80"
+      - "0.0.0.0:9090:80"
