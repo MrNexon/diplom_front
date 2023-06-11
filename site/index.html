@@ -36,7 +36,7 @@
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        window.ipAddress = 'localhost';
+        window.ipAddress = window.location.href.match(/https?:\/\/([a-z\d.]*)/i)[1];
         //Объявление адресов (куда отправляться за данными)
         window.apiAddress = `http://${window.apiAddress}:3000`;
         window.wsAddress = `ws://${window.apiAddress}:3001`;
